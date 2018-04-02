@@ -19,47 +19,31 @@ public class ZerodhaXelpmoc {
 	  String answer1;
 	  String answer2;
 	  String answer;
-	  String str1 ="What is your spouse's blood group? (e.g. A Plus, B Minus etc)";
-	  String str2 ="Which company was your first life insurance provider? (e.g. LIC, Bajaj Allianz, etc.)";
-	  String str3 ="Which is the theater nearest to your home?";
-	  String str4 ="What is your birth place?";
-	  String str5 ="What is the brand name of the first watch you owned? (e.g. Titan, Times, etc)";
+	  String str1 = "Question 1"; //"What is your spouse's blood group? (e.g. A Plus, B Minus etc)";
+	  String str2 = "Question 2"; //"Which company was your first life insurance provider? (e.g. LIC, Bajaj Allianz, etc.)";
+	  String str3 = "Question 3"; //"Which is the theater nearest to your home?";
+	  String str4 = "Question 4"; //"What is your birth place?";
+	  String str5 = "Question 5"; // "What is the brand name of the first watch you owned? (e.g. Titan, Times, etc)";
 	
 	  public String Question(String FirstQuestion){
 		  if(FirstQuestion.equalsIgnoreCase(str1)){
-				 answer="B-";
-								
+				 answer="B-"; // your Answer								
 			}
 			else if(FirstQuestion.equalsIgnoreCase(str2)){
-				 answer="ICICI";
-								 
+				 answer="ICICI TST"; // your Answer								 
 			}
 			else if(FirstQuestion.equalsIgnoreCase(str3)){
-				 answer="PVR";
-								
+				 answer="PVR Cinema"; // your Answer								
 			}
 			else if(FirstQuestion.equalsIgnoreCase(str4)){
-				 answer="Delhi";
-								
+				 answer="Delhi-Muma"; // your Answer								
 			}
 			else if(FirstQuestion.equalsIgnoreCase(str5)){
-				 answer="Titan";
-				
+				 answer="Titan"; // your Answer		 
 			}
-		return answer;
-		
+		return answer;		
 	  }
 	  
-	public void screenShot(){
-		File screen = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		try {
-			FileCopyUtils.copy(screen, new File("E:\\Atul\\zerodha.jpg"));
-		} catch (IOException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-	}
-	
 	public void QuestionAnswer() throws InterruptedException{
 			Thread.sleep(1000);
 		 	String FirstQuestion = driver.findElement(By.xpath("/html/body/div[1]/div/div[2]/div[1]/div/div/div[2]/form/div[2]/div/label")).getText();		 
@@ -97,17 +81,17 @@ public class ZerodhaXelpmoc {
 	 String kiteUrl;
 	  try {
 	  driver = new ChromeDriver();
-	  kiteUrl= "https://kite.trade/connect/login?v=3&api_key=qkexi19nbjdwf9jm";
+	  kiteUrl= "YOUR LINK";
 	  driver.get(kiteUrl);
 	  Thread.sleep(1000);
 	  formPath = "/html/body/div[1]/div/div[2]/div[1]/div/div/div[2]/form";	
 	  driver.findElement(By.xpath(formPath+"/div[1]/input")).click();
 	  Thread.sleep(1000);
-	  driver.findElement(By.xpath(formPath+"/div[1]/input")).sendKeys("XJ0825");
+	  driver.findElement(By.xpath(formPath+"/div[1]/input")).sendKeys("XXXX"); //userId
 	  Thread.sleep(1000);
 	  driver.findElement(By.xpath(formPath+"/div[2]/input")).click();
 	  Thread.sleep(1000);
-	  driver.findElement(By.xpath(formPath+"/div[2]/input")).sendKeys("xelpmoc@92");
+	  driver.findElement(By.xpath(formPath+"/div[2]/input")).sendKeys("XXXXXX"); //Password
 	  Thread.sleep(1000);
 	  driver.findElement(By.xpath(formPath+"/div[3]/button")).click();
 	  System.out.println("Login Succesful");	  
